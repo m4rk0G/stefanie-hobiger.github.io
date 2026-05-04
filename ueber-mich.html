@@ -187,7 +187,7 @@
     }
     .section { padding: 2.4rem 0 4.8rem; }
     .section-alt { padding-top: 1rem; }
-    .section-heading { max-width: 44rem; margin-bottom: 2rem; }
+    .section-heading { margin-bottom: 2rem; }
     .section-heading h2, .split-copy h2, .teaser-panel h2, .offer-card h2, .about-panel h2, .contact-card h2 {
       font-size: clamp(2.1rem, 4vw, 3.6rem);
     }
@@ -249,6 +249,189 @@
     .about-panel.muted {
       background: linear-gradient(180deg, rgba(238, 240, 228, 0.94), rgba(255, 255, 255, 0.88));
     }
+    .values-section {
+      position: relative;
+      overflow: hidden;
+      padding: 0 0 4.8rem;
+    }
+    .values-section::before,
+    .values-section::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .values-section::before {
+      width: 320px;
+      height: 320px;
+      left: -140px;
+      top: 40px;
+      background: rgba(139, 155, 88, 0.08);
+      filter: blur(8px);
+    }
+    .values-section::after {
+      width: 280px;
+      height: 280px;
+      right: -120px;
+      bottom: 10px;
+      background: rgba(62, 106, 69, 0.08);
+      filter: blur(8px);
+    }
+    .values-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .title-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 1.3rem 0 2.2rem;
+      color: var(--green);
+    }
+    .title-decoration span {
+      width: 72px;
+      height: 1px;
+      background: rgba(42, 66, 37, 0.14);
+    }
+    .title-decoration small {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(42, 66, 37, 0.08);
+      box-shadow: var(--shadow);
+    }
+    .value-card {
+      background: rgba(255, 255, 255, 0.78);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      min-height: 100%;
+    }
+    .icon-wrap {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(139, 155, 88, 0.14);
+    }
+    .value-card:nth-child(even) .icon-wrap {
+      background: rgba(62, 106, 69, 0.1);
+    }
+    .icon-wrap svg {
+      width: 42px;
+      height: 42px;
+      stroke: var(--green-deep);
+      stroke-width: 1.45;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .value-card h3 {
+      margin-bottom: 0.9rem;
+      font-size: 2rem;
+      color: var(--green-deep);
+    }
+    .value-card p {
+      max-width: 24ch;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .about-story-section {
+      position: relative;
+      padding: 0 0 4.8rem;
+      overflow: hidden;
+    }
+    .about-story-section::before {
+      content: "";
+      position: absolute;
+      left: -140px;
+      bottom: -180px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(139, 155, 88, 0.08);
+      filter: blur(8px);
+      z-index: 0;
+    }
+    .about-story-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .about-image-card {
+      position: relative;
+      min-height: 520px;
+    }
+    .about-photo {
+      height: 520px;
+      border-radius: 42% 42% 28% 28%;
+      overflow: hidden;
+      border: 1px solid rgba(42, 66, 37, 0.08);
+      box-shadow: 0 30px 90px rgba(79, 87, 56, 0.16);
+      background: linear-gradient(160deg, rgba(111, 122, 79, 0.16), rgba(232, 199, 181, 0.24));
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-badge {
+      position: absolute;
+      right: -18px;
+      bottom: 42px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: rgba(238, 240, 228, 0.96);
+      color: var(--green-deep);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      line-height: 1.15;
+      box-shadow: 0 18px 50px rgba(79, 87, 56, 0.14);
+      border: 1px solid rgba(42, 66, 37, 0.08);
+    }
+    .about-content-card {
+      background: rgba(255, 255, 255, 0.74);
+      padding: 3rem;
+      border-radius: 38px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(42, 66, 37, 0.08);
+    }
+    .about-content-card h2 {
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      margin-bottom: 1.5rem;
+      color: var(--green-deep);
+    }
+    .about-lead {
+      margin: 0 0 1.3rem;
+      font-size: 1.14rem;
+      line-height: 1.7;
+      color: var(--green-deep);
+      font-weight: 600;
+    }
+    .about-content-card p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+    .about-content-card p:last-child {
+      margin-bottom: 0;
+    }
     .small-note { margin-top: 0.8rem; font-size: 0.92rem; }
     .site-footer { padding: 1.4rem 0 2rem; }
     .footer-grid {
@@ -284,6 +467,21 @@
       .hero-grid, .split-layout, .feature-grid, .audience-grid, .contact-grid, .faq-grid, .offer-grid, .about-grid {
         grid-template-columns: 1fr;
       }
+      .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .about-story-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .about-image-card {
+        max-width: 520px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .about-badge {
+        right: 16px;
+      }
       .teaser-panel, .footer-grid {
         flex-direction: column;
         align-items: start;
@@ -316,6 +514,35 @@
       .site-nav a { width: 100%; }
       .hero, .page-hero { padding-top: 4.2rem; }
       .hero-copy h1, .page-hero h1 { max-width: none; }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      .value-card {
+        padding: 1.7rem 1.3rem;
+      }
+      .title-decoration {
+        margin-bottom: 1.8rem;
+      }
+      .title-decoration span {
+        width: 48px;
+      }
+      .about-story-section {
+        padding-bottom: 4rem;
+      }
+      .about-content-card {
+        padding: 2rem 1.5rem;
+        border-radius: 28px;
+      }
+      .about-photo {
+        height: 420px;
+      }
+      .about-badge {
+        width: 138px;
+        height: 138px;
+        font-size: 1.2rem;
+        right: 10px;
+        bottom: 24px;
+      }
     }
   </style>
 </head>
@@ -347,29 +574,94 @@
       <div class="container reveal">
         <p class="eyebrow">Über mich</p>
         <h1>Persönliche Erfahrung, Fachwissen und ein realistischer Blick auf den Alltag.</h1>
-        <p class="lead narrow">
-          Mein Interesse an Ernährung wurde durch eigene Unverträglichkeiten und meine Erfahrungen als Mutter noch größer.
-        </p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container about-grid">
-        <div class="about-panel reveal">
-          <p class="eyebrow">Über mich</p>
-          <h2>Aus persönlicher Erfahrung wurde mein Beruf.</h2>
-          <p>
-            Seit meiner Diagnose zu Unverträglichkeiten beschäftige ich mich intensiv mit Ernährung. Als mein Sohn 2023 zur Welt kam und wie ich mit etwa 8 Monaten Neurodermitis bekam, wurde mein Interesse noch größer und ich startete die Ausbildung zur Ernährungstrainerin.
-          </p>
-        </div>
-        <div class="about-panel muted reveal">
+    <section class="values-section">
+      <div class="container values-inner">
+        <div class="section-heading reveal">
           <p class="eyebrow">Was mir wichtig ist</p>
-          <ul class="check-list">
-            <li>Mit Leichtigkeit und stressfrei begleiten</li>
-            <li>Keine radikalen Verbote</li>
-            <li>Erfahrung als Mutter</li>
-            <li>Erfahrung aus der Elementarpädagogik</li>
-          </ul>
+          <h2>Ernährung mit Herz &amp; Leichtigkeit</h2>
+          <div class="title-decoration" aria-hidden="true">
+            <span></span>
+            <small>♥</small>
+            <span></span>
+          </div>
+        </div>
+        <div class="values-grid">
+          <article class="value-card reveal">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 52V18" />
+                <path d="M32 24C21 16 15 15 9 18c2 10 10 16 23 16" />
+                <path d="M32 32c11-8 17-9 23-6-2 10-10 16-23 16" />
+                <path d="M32 18c3-7 8-11 15-12 1 8-3 14-15 18" />
+              </svg>
+            </div>
+            <h3>Mit Leichtigkeit und stressfrei begleiten</h3>
+            <p>Ich zeige dir Wege, die sich leicht in deinen Alltag integrieren lassen, ohne Druck, dafür mit Verständnis und Motivation.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 53S12 40 12 23c0-8 6-14 14-14 4 0 8 2 10 6 2-4 6-6 10-6 8 0 14 6 14 14 0 17-20 30-28 30Z" />
+              </svg>
+            </div>
+            <h3>Keine radikalen Verbote</h3>
+            <p>Es geht nicht um Perfektion, sondern um Balance. Alle Lebensmittel haben ihren Platz, genussvoll und bewusst.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="25" cy="18" r="8" />
+                <path d="M11 52V42c0-10 6-17 14-17s14 7 14 17v10" />
+                <circle cx="45" cy="29" r="6" />
+                <path d="M35 52V44c0-7 4-12 10-12s10 5 10 12v8" />
+              </svg>
+            </div>
+            <h3>Erfahrung als Mutter</h3>
+            <p>Ich kenne den herausfordernden Alltag mit Kindern und weiß, wie wichtig einfache, alltagstaugliche Lösungen sind.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M10 45a22 22 0 0 1 44 0" />
+                <path d="M18 45a14 14 0 0 1 28 0" />
+                <path d="M26 45a6 6 0 0 1 12 0" />
+              </svg>
+            </div>
+            <h3>Erfahrung aus der Elementarpädagogik</h3>
+            <p>Mein pädagogischer Hintergrund hilft mir, Menschen individuell, einfühlsam und ganzheitlich zu begleiten.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-story-section">
+      <div class="container about-story-inner">
+        <div class="about-image-card reveal">
+          <div class="about-photo">
+            <img src="assets/portrait.jpeg" alt="Porträt von Stefanie Gattringer">
+          </div>
+          <div class="about-badge">Aus Erfahrung<br>wurde Beruf</div>
+        </div>
+
+        <div class="about-content-card reveal">
+          <p class="eyebrow">Über mich</p>
+          <h2>Mein Weg zur Ernährungstrainerin</h2>
+          <p class="about-lead">Aus persönlicher Erfahrung wurde mein Beruf.</p>
+          <p>
+            Seit meiner Diagnose zu Unverträglichkeiten beschäftige ich mich intensiv mit Ernährung. Dadurch habe ich gelernt, wie wertvoll eine Ernährung ist, die nicht einschränkt, sondern unterstützt und zum eigenen Leben passt.
+          </p>
+          <p>
+            Als mein Sohn 2023 zur Welt kam und wie ich mit etwa 8 Monaten Neurodermitis bekam, wurde mein Interesse noch größer. Ich wollte Zusammenhänge besser verstehen, alltagstaugliche Lösungen finden und mein Wissen vertiefen.
+          </p>
+          <p>
+            Deshalb startete ich die Ausbildung zur Ernährungstrainerin. Heute begleite ich Menschen mit viel Verständnis, Leichtigkeit und einem Blick für das echte Leben.
+          </p>
         </div>
       </div>
     </section>

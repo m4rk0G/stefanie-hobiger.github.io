@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angebote | Stefanie Gattringer Ernährungstrainerin</title>
+  <meta
+    name="description"
+    content="Angebote zu Darmgesundheit, Ernährungsumstellung, Kleinkindernährung und Vorträgen für Eltern und Einrichtungen."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f7f0;
+      --surface: #ffffff;
+      --surface-olive: #eef0e4;
+      --text: #20301e;
+      --muted: #5f6e57;
+      --line: rgba(42, 66, 37, 0.14);
+      --green: #3e6a45;
+      --green-deep: #27442a;
+      --olive: #8b9b58;
+      --shadow: 0 24px 60px rgba(38, 60, 33, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(139, 155, 88, 0.18), transparent 28%),
+        linear-gradient(180deg, #fcfcf7 0%, var(--bg) 42%, #f2f3eb 100%);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    p { margin: 0; line-height: 1.7; }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.05;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+    }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .container { width: min(calc(100% - 2rem), var(--container)); margin: 0 auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 247, 240, 0.82);
+      border-bottom: 1px solid rgba(42, 66, 37, 0.08);
+    }
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 84px;
+      gap: 1.5rem;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 0.9rem; }
+    .brand-mark {
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      box-shadow: 0 12px 30px rgba(62, 106, 69, 0.22);
+      flex: 0 0 auto;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .brand-text strong { font-size: 1rem; color: var(--text); }
+    .site-nav { display: flex; align-items: center; gap: 0.4rem; }
+    .site-nav a {
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: 180ms ease;
+    }
+    .site-nav a:hover, .site-nav a.active {
+      background: rgba(139, 155, 88, 0.16);
+      color: var(--green-deep);
+    }
+    .nav-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 999px;
+      padding: 0.8rem 1rem;
+      color: var(--green-deep);
+      font: inherit;
+    }
+    .hero, .page-hero { padding: 5.5rem 0 3rem; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.95fr;
+      gap: 2rem;
+      align-items: end;
+    }
+    .hero-copy h1, .page-hero h1 {
+      font-size: clamp(3.3rem, 7vw, 6.2rem);
+      max-width: none;
+    }
+    .lead {
+      margin-top: 1.5rem;
+      font-size: 1.08rem;
+      max-width: 58ch;
+      color: var(--muted);
+    }
+    .lead.narrow { max-width: none; }
+    .eyebrow {
+      margin-bottom: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.35rem;
+      padding: 0.85rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--green-deep), var(--green));
+      box-shadow: 0 16px 36px rgba(39, 68, 42, 0.2);
+    }
+    .button-secondary {
+      color: var(--green-deep);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--line);
+    }
+    .hero-card, .feature-card, .offer-card, .about-panel, .contact-card, .faq-card, .teaser-panel, .step {
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(42, 66, 37, 0.08);
+      box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 2rem; border-radius: var(--radius-lg); }
+    .card-label { margin-bottom: 1rem; font-weight: 700; color: var(--green-deep); }
+    .check-list { display: grid; gap: 0.9rem; }
+    .check-list li {
+      position: relative;
+      padding-left: 1.7rem;
+      color: var(--muted);
+    }
+    .check-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--olive), var(--green));
+    }
+    .section { padding: 2.4rem 0 4.8rem; }
+    .section-alt { padding-top: 1rem; }
+    .section-heading { max-width: 44rem; margin-bottom: 2rem; }
+    .section-heading h2, .split-copy h2, .teaser-panel h2, .offer-card h2, .about-panel h2, .contact-card h2 {
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+    }
+    .feature-grid, .audience-grid, .contact-grid, .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+    .feature-card, .faq-card, .contact-card {
+      padding: 1.7rem;
+      border-radius: var(--radius-md);
+    }
+    .feature-card h3, .faq-card h3 {
+      margin-bottom: 0.8rem;
+      font-size: 2rem;
+    }
+    .feature-card p, .faq-card p, .contact-card p, .offer-card p, .about-panel p, .step p {
+      color: var(--muted);
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .steps { display: grid; gap: 1rem; }
+    .step {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+    }
+    .step span, .offer-index {
+      display: inline-flex;
+      margin-bottom: 0.9rem;
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+    .step h3 { margin-bottom: 0.75rem; font-size: 2rem; }
+    .teaser-panel {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+    }
+    .offer-grid, .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+    .register-stack {
+      display: grid;
+      gap: 1.6rem;
+    }
+    .register-block {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .register-intro {
+      padding: 1.7rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(238, 240, 228, 0.96), rgba(255, 255, 255, 0.88));
+      border: 1px solid rgba(42, 66, 37, 0.08);
+      box-shadow: var(--shadow);
+    }
+    .register-toggle {
+      width: 100%;
+      border: 0;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      position: relative;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    .register-toggle:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(180deg, rgba(228, 235, 207, 0.98), rgba(255, 255, 255, 0.94));
+      border-color: rgba(62, 106, 69, 0.22);
+      box-shadow: 0 28px 60px rgba(62, 106, 69, 0.18);
+    }
+    .register-toggle:hover h2,
+    .register-toggle:hover .eyebrow {
+      color: var(--green-deep);
+    }
+    .register-toggle::after {
+      content: "+";
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(139, 155, 88, 0.14);
+      color: var(--green-deep);
+      font-size: 1.35rem;
+      line-height: 1;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    .register-toggle:hover::after {
+      transform: scale(1.08);
+      background: rgba(139, 155, 88, 0.24);
+    }
+    .register-block.open .register-toggle::after {
+      content: "−";
+    }
+    .register-intro h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 0.8rem;
+    }
+    .register-intro p {
+      color: var(--muted);
+      max-width: 68ch;
+    }
+    .register-link-inline {
+      color: var(--green-deep);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+    .register-link-inline:hover {
+      color: var(--green);
+    }
+    .register-offers {
+      display: none;
+    }
+    .register-block.open .register-offers {
+      display: grid;
+    }
+    .offer-card, .about-panel {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+    }
+    .offer-card {
+      display: grid;
+      gap: 1rem;
+      padding: 2rem;
+      position: relative;
+    }
+    .offer-summary {
+      color: var(--muted);
+      max-width: 48ch;
+    }
+    .offer-details {
+      display: grid;
+      gap: 0.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(42, 66, 37, 0.08);
+    }
+    .offer-detail {
+      color: var(--muted);
+    }
+    .about-panel.muted {
+      background: linear-gradient(180deg, rgba(238, 240, 228, 0.94), rgba(255, 255, 255, 0.88));
+    }
+    .small-note { margin-top: 0.8rem; font-size: 0.92rem; }
+    .site-footer { padding: 1.4rem 0 2rem; }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(42, 66, 37, 0.08);
+    }
+    .footer-grid p { color: var(--muted); max-width: 38ch; }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: var(--muted);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: rise 0.7s ease forwards;
+    }
+    .reveal:nth-child(2) { animation-delay: 0.08s; }
+    .reveal:nth-child(3) { animation-delay: 0.16s; }
+    .reveal:nth-child(4) { animation-delay: 0.24s; }
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 960px) {
+      .hero-grid, .split-layout, .feature-grid, .audience-grid, .contact-grid, .faq-grid, .offer-grid, .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .teaser-panel, .footer-grid {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+    @media (max-width: 760px) {
+      .nav-toggle { display: inline-flex; }
+      .site-nav {
+        position: absolute;
+        top: calc(100% + 0.7rem);
+        left: 1rem;
+        right: 1rem;
+        padding: 0.7rem;
+        border: 1px solid rgba(42, 66, 37, 0.08);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 180ms ease;
+      }
+      .site-nav.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .site-nav a { width: 100%; }
+      .hero, .page-hero { padding-top: 4.2rem; }
+      .hero-copy h1, .page-hero h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><img src="assets/brand.png" alt=""></span>
+        <span class="brand-text">
+          <strong>Stefanie Gattringer</strong>
+          <span>Ernährungstrainerin</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menü
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+        <a href="index.html">Start</a>
+        <a class="active" href="angebote.html">Angebote</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="veranstaltungen.html">Veranstaltungen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="eyebrow">Angebote</p>
+        <h1>Meine Angebote im Überblick.</h1>
+      </div>
+    </section>
+
+    <!--section class="section">
+      <div class="container">
+        <aside class="hero-card reveal">
+          <p class="card-label">Wann eine Ernährungsumstellung sinnvoll sein kann</p>
+          <ul class="check-list">
+            <li>Nachhaltig Gewicht reduzieren</li>
+            <li>Diäten und Jo-Jo-Effekt hinter dir lassen</li>
+            <li>Heißhunger im Alltag besser verstehen</li>
+            <li>Darmgesundheit fördern</li>
+            <li>Ungesunde Gewohnheiten verändern</li>
+          </ul>
+        </aside>
+      </div>
+    </section-->
+
+    <section class="section">
+      <div class="container register-stack">
+        <section class="register-block">
+          <button class="register-intro reveal" type="button" aria-expanded="false" style="text-align: left;">
+            <h2>Kostenfreies Erstgespräch</h2>
+            <p>Beim Erstgespräch hast du die Möglichkeit, mich und meine Arbeitsweise kennen zu lernen. Wir finden gemeinsam heraus, welche Ernährungsthemen derzeit am sinnvollsten für dich sind.</p>
+          </button>
+        </section>
+
+        <section class="register-block">
+          <article class="register-intro reveal">
+            <h2>Veranstaltungen</h2>
+            <p>Hier findest du alle kommenden Termine, Gruppenangebote und Events. <a class="register-link-inline" href="veranstaltungen.html">Zur Seite Veranstaltungen</a></p>
+          </article>
+        </section>
+
+        <section class="register-block">
+          <button class="register-intro register-toggle reveal" type="button" aria-expanded="false">
+            <h2>Ernährung im Kleinkindalter</h2>
+            <p>Gemüse wird am Teller aussortiert, jeden Tag Nudeln, was soll in die Jausenbox und wie viel Zucker ist zu viel? Genau hier unterstütze ich dich mit Erfahrung als Mutter, Elementarpädagogin und Ernährungstrainerin.</p>
+          </button>
+          <div class="offer-grid register-offers">
+            <article class="offer-card reveal">
+              <h2>Zu Hause bei dir</h2>
+              <p class="offer-summary">Gesunde Ernährung im Kleinkindalter persönlich bei dir zu Hause.</p>
+              <div class="offer-details">
+                <p class="offer-detail">Dauer etwa 1 Stunde.</p>
+                <p class="offer-detail">Kosten: <strong>50 €</strong></p>
+                <p class="offer-detail">Anfahrt im Umkreis von 5 km gratis, danach <strong>0,50 € pro km</strong>.</p>
+                <p class="offer-detail">Infomaterial, Kostproben und Rezeptideen inbegriffen.</p>
+              </div>
+            </article>
+
+            <article class="offer-card reveal">
+              <h2>Mit Freunden oder Familie</h2>
+              <p class="offer-summary">Gesunde Ernährung im Kleinkindalter bei dir zu Hause mit Freunden und/oder Familie.</p>
+              <div class="offer-details">
+                <p class="offer-detail">Dauer etwa 1 Stunde.</p>
+                <p class="offer-detail">Maximale Gruppengröße: 7 Personen.</p>
+                <p class="offer-detail">Kosten: <strong>10 € pro Person</strong></p>
+                <p class="offer-detail">Infomaterial, Kostproben und Rezeptideen inbegriffen.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="register-block">
+          <button class="register-intro register-toggle reveal" type="button" aria-expanded="false">
+            <h2>Ernährung im Erwachsenenalter</h2>
+            <p>Du weißt über gesunde Ernährung Bescheid, kommst dennoch nicht an dein Ziel oder der Anfang fällt dir schwer? Hier findest du Angebote für alltagstaugliche Unterstützung.</p>
+          </button>
+          <div class="offer-grid register-offers">
+            <article class="offer-card reveal">
+              <h2>Allgemeine Wissensweitergabe</h2>
+              <p class="offer-summary">Tipps und Tricks für Umstellungen, die dir ohne viel Aufwand im Alltag weiterhelfen können.</p>
+              <div class="offer-details">
+                <p class="offer-detail">Dauer etwa 1 Stunde.</p>
+                <p class="offer-detail">Kosten: <strong>60 €</strong></p>
+                <p class="offer-detail">Anfahrt im Umkreis von 5 km gratis, danach <strong>0,50 € pro km</strong>.</p>
+                <p class="offer-detail">Infomaterial und Rezeptideen inbegriffen.</p>
+              </div>
+            </article>
+
+            <article class="offer-card reveal">
+              <h2>8 Wochen Programm</h2>
+              <p class="offer-summary">Ich begleite dich 8 Wochen durchgehend in deiner Ernährung und stehe dir bei Fragen täglich zur Verfügung.</p>
+              <div class="offer-details">
+                <p class="offer-detail">Enthalten sind allgemeine Wissensweitergabe, Besprechung deiner Ernährungstagebücher und persönliche oder telefonische Zwischengespräche.</p>
+                <p class="offer-detail">Rezeptideen sowie gemeinsames Einkaufen und Kochen sind auf Wunsch möglich.</p>
+                <p class="offer-detail">Kosten: <strong>600 €</strong></p>
+                <p class="offer-detail">Anfahrt im Umkreis von 5 km gratis, danach <strong>0,50 € pro km</strong>.</p>
+                <p class="offer-detail">Weiterbuchung nach diesen 8 Wochen: <strong>50 € pro Stunde</strong>.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="register-block">
+          <button class="register-intro register-toggle reveal" type="button" aria-expanded="false">
+            <h2>Für Betriebe und pädagogische Einrichtungen</h2>
+            <p>Ob Vortrag, Workshop oder Elternabend: Die Inhalte werden persönlich abgestimmt und an die jeweilige Gruppe angepasst.</p>
+          </button>
+          <div class="offer-grid register-offers">
+            <article class="offer-card reveal">
+              <h2>Für Betriebe</h2>
+              <p class="offer-summary">Vorträge oder Workshops für Mitarbeiterinnen und Mitarbeiter.</p>
+              <div class="offer-details">
+                <p class="offer-detail">Weitere Informationen und Wünsche werden in einem persönlichen oder telefonischen Gespräch besprochen.</p>
+                <p class="offer-detail">Preis variiert je nach Betriebsgröße und Umfang des gewünschten Angebots.</p>
+                <p class="offer-detail">Anfahrt im Umkreis von 5 km gratis, danach <strong>0,50 € pro km</strong>.</p>
+                <p class="offer-detail">Infomaterial, Kostproben und Rezeptideen inbegriffen.</p>
+              </div>
+            </article>
+
+            <article class="offer-card reveal">
+              <h2>Für pädagogische Einrichtungen</h2>
+              <p class="offer-summary">Angebote für Eltern in Kindergarten, Krabbelstube und ähnlichen Einrichtungen.</p>
+              <div class="offer-details">
+                <p class="offer-detail">Dauer etwa 1 Stunde plus anschließende Fragen.</p>
+                <p class="offer-detail">Kosten: <strong>100 € pro Gruppe Kiga</strong> und <strong>50 € pro Gruppe KrSt</strong>.</p>
+                <p class="offer-detail">Vergünstigung bei mehr als 4 Gruppen möglich.</p>
+                <p class="offer-detail">Anfahrt im Umkreis von 5 km gratis, danach <strong>0,50 € pro km</strong>.</p>
+                <p class="offer-detail">Infomaterial, Kostproben und Rezeptideen inbegriffen.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Stefanie Gattringer Ernährungstrainerin</strong>
+        <p>Ernährungswissen mit Struktur, Herz und Alltagstauglichkeit.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Start</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    document.querySelectorAll(".register-block").forEach((block) => {
+      const button = block.querySelector(".register-toggle");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        const willOpen = !block.classList.contains("open");
+        document.querySelectorAll(".register-block.open").forEach((openBlock) => {
+          openBlock.classList.remove("open");
+          const openButton = openBlock.querySelector(".register-toggle");
+          if (openButton) openButton.setAttribute("aria-expanded", "false");
+        });
+
+        if (willOpen) {
+          block.classList.add("open");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
